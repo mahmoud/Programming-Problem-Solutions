@@ -1,10 +1,8 @@
-#!/bin/python
+#!/usr/bin/env python
 
 import sys
 
-n,k = raw_input().strip().split(' ')
-n,k = [int(n),int(k)]
-number = raw_input().strip()
+
 def comp(n,k,number):
     if n == 0 or n!=len(number):
         print '-1'
@@ -50,5 +48,15 @@ def comp(n,k,number):
     for char in ar:
         a +=char
     print a
-    
-comp(n,k,number)
+
+
+def main(argv):
+    n,k = raw_input().strip().split(' ')
+    n,k = [int(n),int(k)]
+    number = raw_input().strip()
+
+    comp(n,k,number)
+
+
+if __name__ == '__main__':
+    main(sys.argv)
