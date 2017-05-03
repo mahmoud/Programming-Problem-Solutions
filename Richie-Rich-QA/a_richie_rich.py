@@ -3,10 +3,12 @@
 import sys
 
 
-def comp(n,k,number):
-    if n == 0 or n!=len(number):
-        print '-1'
-        return
+def comp(n, k, number):
+    "return list of lines with the computed result"
+    n = int(n)
+    k = int(n)
+    if n == 0 or n != len(number):
+        return ['-1']
     dif = []
     x = [1]
     y = x
@@ -15,8 +17,7 @@ def comp(n,k,number):
         if number[i] != number[len(number)-1-i]:
             dif.append((i,len(number)-1-i))
     if len(dif)>k:
-        print -1
-        return
+        return ['-1']
     ar = []
     for char in number:
         ar.append(char)
@@ -47,7 +48,7 @@ def comp(n,k,number):
     a = ""
     for char in ar:
         a +=char
-    print a
+    return [a]
 
 
 def main(argv):
@@ -55,7 +56,9 @@ def main(argv):
     n,k = [int(n),int(k)]
     number = raw_input().strip()
 
-    comp(n,k,number)
+    for res in comp(n,k,number):
+        print res
+    return
 
 
 if __name__ == '__main__':
